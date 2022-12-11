@@ -1,0 +1,14 @@
+
+// User model
+
+1. photo (+880) means
+2. what does mean by isModified
+
+
+// Token model
+
+1. userId how will it with postman
+2. why token model ??
+
+
+//
