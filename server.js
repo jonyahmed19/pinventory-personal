@@ -16,7 +16,7 @@ const { default: mongoose } = require("mongoose");
  */
 
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(
   express.urlencoded({
