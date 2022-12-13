@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const { generateToken } = require("../../helpers/token");
-const findbyEmail = require("../../helpers/checkExists");
+const { findbyEmail } = require("../../helpers/helperquery");
 const bcrypt = require("bcryptjs");
 
 const loginController = asyncHandler(async (req, res) => {

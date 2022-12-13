@@ -12,4 +12,12 @@
 
 
 //Error Handler
-Error handler args should get explaination
+1. Error handler args should get explaination
+
+//Updatecontroller
+1. updateuser query
+
+
+// changepasscontroller
+line204: should be &&
+
