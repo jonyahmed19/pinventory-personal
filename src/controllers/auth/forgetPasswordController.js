@@ -1,6 +1,5 @@
 const asyncHandler = require("express-async-handler");
 const { findbyEmail } = require("../../helpers/helperquery");
-const bcrypt = require("bcryptjs");
 const Token = require("../../models/tokenModel");
 const crypto = require("crypto");
 const sendEmail = require("../../utils/sendEmail");

@@ -10,6 +10,8 @@ const updateController = require("../controllers/auth/updateController");
 const { protected } = require("../helpers/token");
 const changepasswordController = require("../controllers/auth/changepassController");
 const forgetPasswordController = require("../controllers/auth/forgetPasswordController");
+const getUserController = require("../controllers/auth/getUserController");
+const loginStatusController = require("../controllers/auth/loginStatusController");
 /**
  * Auth releated
  */
@@ -19,6 +21,12 @@ router.get("/logout", logOutController);
 router.patch("/updateuser", protected, updateController);
 router.patch("/changepassword", protected, changepasswordController);
 router.patch("/forgetpassword", protected, forgetPasswordController);
-router.patch("/resetpassword", protected, forgetPasswordController);
+// router.patch("/resetpassword", protected, forgetPasswordController);
+
+/**
+ * Login check
+ */
+router.get("/getuser", protected, getUserController);
+router.get("/loggedin", loginStatusController);
 
 module.exports = router;
