@@ -9,7 +9,7 @@ const logOutController = require("../controllers/auth/logoutController");
 const updateController = require("../controllers/auth/updateController");
 const { protected } = require("../helpers/token");
 const changepasswordController = require("../controllers/auth/changepassController");
-
+const forgetPasswordController = require("../controllers/auth/forgetPasswordController");
 /**
  * Auth releated
  */
@@ -18,5 +18,7 @@ router.post("/login", loginController);
 router.get("/logout", logOutController);
 router.patch("/updateuser", protected, updateController);
 router.patch("/changepassword", protected, changepasswordController);
+router.patch("/forgetpassword", protected, forgetPasswordController);
+router.patch("/resetpassword", protected, forgetPasswordController);
 
 module.exports = router;
