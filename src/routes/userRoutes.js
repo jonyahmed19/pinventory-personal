@@ -12,6 +12,8 @@ const changepasswordController = require("../controllers/auth/changepassControll
 const forgetPasswordController = require("../controllers/auth/forgetPasswordController");
 const getUserController = require("../controllers/auth/getUserController");
 const loginStatusController = require("../controllers/auth/loginStatusController");
+const resetPasswordController = require("../controllers/auth/resetPasswordController");
+
 /**
  * Auth releated
  */
@@ -21,7 +23,7 @@ router.get("/logout", logOutController);
 router.patch("/updateuser", protected, updateController);
 router.patch("/changepassword", protected, changepasswordController);
 router.patch("/forgetpassword", protected, forgetPasswordController);
-// router.patch("/resetpassword", protected, forgetPasswordController);
+router.patch("/resetpassword/:resetToken", protected, resetPasswordController);
 
 /**
  * Login check
