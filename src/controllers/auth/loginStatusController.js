@@ -1,5 +1,4 @@
 const asyncHandler = require("express-async-handler");
-const { findbyId } = require("../../helpers/helperquery");
 const jwt = require("jsonwebtoken");
 const loginStatusController = asyncHandler(async (req, res) => {
   const token = req.cookies.token;
