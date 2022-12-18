@@ -15,20 +15,20 @@ const loginStatusController = require("../controllers/auth/loginStatusController
 const resetPasswordController = require("../controllers/auth/resetPasswordController");
 
 /**
- * Auth releated
+ * Public Routes
  */
 router.post("/register", registerUserController);
 router.post("/login", loginController);
 router.get("/logout", logOutController);
+router.get("/loggedin", loginStatusController);
+
+/***
+ * Private Routes
+ */
 router.patch("/updateuser", protected, updateController);
 router.patch("/changepassword", protected, changepasswordController);
 router.patch("/forgetpassword", protected, forgetPasswordController);
 router.patch("/resetpassword/:resetToken", protected, resetPasswordController);
-
-/**
- * Login check
- */
 router.get("/getuser", protected, getUserController);
-router.get("/loggedin", loginStatusController);
 
 module.exports = router;
