@@ -19,16 +19,16 @@ const loginController = asyncHandler(async (req, res) => {
 
   const passwordCheck = await bcrypt.compare(password, user.password);
 
-  const token = generateToken(user._id);
-
-  res.cookie("token", token, {
-    path: "/",
-    httpOnly: true,
-    expires: new Date(Date.now() + 1000 * 86400), // 1 day
-    sameSite: "none",
-    secure: true,
-  });
   if (user && passwordCheck) {
+    const token = generateToken(user._id);
+
+    res.cookie("token", token, {
+      path: "/",
+      httpOnly: true,
+      expires: new Date(Date.now() + 1000 * 86400), // 1 day
+      sameSite: "none",
+      secure: true,
+    });
     const { _id, name, email, photo, phone, bio } = user;
     res.status(200).json({
       _id,
