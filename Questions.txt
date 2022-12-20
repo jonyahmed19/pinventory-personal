@@ -18,7 +18,8 @@
 1. updateuser query
 
 
-// changepasscontroller
+// forgetPasswordController
+// resetpasswordcontroller
 
 
 
