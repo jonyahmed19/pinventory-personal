@@ -2,9 +2,6 @@ const asyncHandler = require("express-async-handler");
 const { findbyId } = require("../../helpers/helperquery");
 const updateController = asyncHandler(async (req, res) => {
   const user = await findbyId(req.user._id);
-
-  console.log("user ", user);
-
   if (user) {
     const { name, email, photo, phone, bio } = user;
     user.email = email;
